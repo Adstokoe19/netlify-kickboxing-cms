@@ -4,21 +4,29 @@
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "MIT",
+  "dependencies": {
+    "gatsby": "^2.9.4",
+    "gatsby-plugin-netlify-cms": "^4.0.2",
+    "netlify-cms-app": "^2.9.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "lint-all": "eslint .",
+    "lint-staged": "eslint",
+    "fix": "eslint . --fix"
   },
-  "dependencies": {
-    "gatsby": "^2.9.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+  "lint-staged": {
+    "src/**/*": "yarn lint-staged"
   },
-  "devDependencies": {
-    "prettier": "^1.18.2"
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "repository": {
     "type": "git",
@@ -26,5 +34,18 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "babel-eslint": "9.x",
+    "eslint": "5.x",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.5.0",
+    "prettier": "^1.18.2"
   }
 }
